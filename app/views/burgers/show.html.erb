@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @burger.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @burger.price %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @burger.image %>
+</p>
+
+<p>
+  <strong>Nutriscore:</strong>
+  <%= @burger.nutriscore %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @burger.code %>
+</p>
+
+<%= link_to 'Edit', edit_burger_path(@burger) %> |
+<%= link_to 'Back', burgers_path %>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nutriment</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @burger.nutriments.each do |nutriment| %>
+      <tr>
+        <td><%= nutriment[0] %></td>
+        <td><%= nutriment[1] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
