@@ -27,9 +27,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'coffee-script-source', '~> 1.8.0'
-
-gem 'openfoodfacts', '~> 0.5.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -40,9 +37,14 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver', '~> 3.142.7'
+  gem 'rubyzip', '~> 1.2.2'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~>  1.3.6'
-  gem 'rubyzip', '~> 1.3.0'
+end
+
+group :production do
+  # PostgreSQL for Production
+  gem 'pg', '>= 1.2.2'
 end
 
 group :development do
@@ -50,10 +52,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
-group :production do
-  # PostgreSQL
-  gem 'pg', '>= 1.2.2'
-end
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Open Food Facts API https://github.com/openfoodfacts/openfoodfacts-ruby
+gem 'openfoodfacts', '~> 0.5.1'
